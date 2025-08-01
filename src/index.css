@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    scroll-behavior: smooth;
+  }
+  
+  html {
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    overflow-x: hidden;
+    transform: translateX(0);
+    @apply bg-white text-corporate-900;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .font-mono {
+    font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+  }
+  
+  /* Smooth transitions for all elements when switching themes */
+  * {
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-duration: 200ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Corporate scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-corporate-100;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-corporate-400 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-executive-500;
+  }
+}
+
+@layer components {
+  /* Corporate button variants */
+  .btn-corporate {
+    @apply px-6 py-3 rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+  
+  .btn-primary {
+    @apply btn-corporate bg-executive-600 hover:bg-executive-700 text-white shadow-corporate-md hover:shadow-corporate-lg focus:ring-executive-500;
+  }
+  
+  .btn-secondary {
+    @apply btn-corporate bg-corporate-100 text-corporate-700 hover:bg-corporate-200 border border-corporate-300 focus:ring-corporate-500;
+  }
+  
+  .btn-outline {
+    @apply btn-corporate border-2 border-executive-600 text-executive-600 hover:bg-executive-50 focus:ring-executive-500;
+  }
+  
+  .btn-cta {
+    @apply btn-corporate bg-gradient-to-r from-executive-600 to-executive-700 hover:from-executive-700 hover:to-executive-800 text-white shadow-corporate-lg hover:shadow-corporate-xl font-semibold;
+  }
+  
+  /* Corporate card variants */
+  .card-corporate {
+    @apply bg-white dark:bg-corporate-800 border border-corporate-200 dark:border-corporate-700 rounded-xl shadow-corporate-md p-6;
+  }
+  
+  .card-elevated {
+    @apply card-corporate shadow-corporate-xl;
+  }
+  
+  .card-executive {
+    @apply bg-white dark:bg-corporate-800 shadow-corporate-lg border-l-4 border-l-executive-600 border-t border-r border-b border-corporate-200 dark:border-corporate-700 rounded-r-xl p-6;
+  }
+  
+  .card-glass {
+    @apply bg-white/95 dark:bg-corporate-800/95 backdrop-blur-sm border border-corporate-200/50 dark:border-corporate-700/50 rounded-xl p-6;
+  }
+  
+  /* Corporate form inputs */
+  .input-corporate {
+    @apply bg-white dark:bg-corporate-800 border border-corporate-300 dark:border-corporate-600 rounded-lg px-4 py-3 text-corporate-900 dark:text-corporate-100 placeholder-corporate-500 dark:placeholder-corporate-400 focus:ring-2 focus:ring-executive-500 focus:border-executive-500 transition-colors duration-200;
+  }
+  
+  /* Corporate text styles */
+  .text-heading {
+    @apply text-corporate-900 dark:text-corporate-100 font-display font-semibold;
+  }
+  
+  .text-hero {
+    @apply text-corporate-900 dark:text-white font-display font-bold tracking-tight;
+  }
+  
+  .text-accent-gradient {
+    @apply text-transparent bg-gradient-to-r from-executive-600 to-executive-800 dark:from-executive-400 dark:to-executive-600 bg-clip-text font-display font-bold;
+  }
+  
+  .text-body {
+    @apply text-corporate-700 dark:text-corporate-300 leading-relaxed;
+  }
+  
+  .text-muted {
+    @apply text-corporate-600 dark:text-corporate-400;
+  }
+  
+  /* Corporate section backgrounds */
+  .section-corporate {
+    @apply bg-gradient-to-br from-corporate-50 to-white dark:from-corporate-900 dark:to-corporate-800;
+  }
+  
+  .section-executive {
+    @apply bg-gradient-to-r from-white via-corporate-50 to-white dark:from-corporate-900 dark:via-corporate-800 dark:to-corporate-900;
+  }
+}

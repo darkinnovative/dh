@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Absolute Dot Menu</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      min-height: 3000px; /* for scroll testing */
+      position: relative;
+    }
+
+    /* Menu button */
+    .dot-menu {
+      position: absolute;
+      top: 50%;
+      left: 16px;
+      transform: translateY(-50%);
+      width: 50px;
+      height: 50px;
+      background: #333;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    .dot-menu:hover {
+      background: #555;
+    }
+
+    .dot-menu div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .dot-menu span {
+      width: 6px;
+      height: 6px;
+      background: #fff;
+      border-radius: 50%;
+      margin: 2px 0;
+    }
+
+    /* Nav items container */
+    .nav-items {
+      position: absolute;
+      top: 50%;
+      left: 80px;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      z-index: 999;
+    }
+
+    body.show .nav-items {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .nav-item {
+      width: 50px;
+      height: 50px;
+      background: #007bff;
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 50px;
+      font-size: 20px;
+      text-decoration: none;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: background 0.3s ease;
+    }
+
+    .nav-item:hover,
+    .nav-item:focus {
+      background: #0056b3;
+      outline: none;
+    }
+
+    @media (min-width: 768px) {
+      .dot-menu, .nav-items {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Toggle Button -->
+  <div class="dot-menu" id="menuToggle" aria-label="Toggle navigation" role="button" tabindex="0">
+    <div>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <!-- Navigation Items -->
+  <div class="nav-items" id="navItems">
+    <a href="#home" class="nav-item" aria-label="Home" title="Home">🏠</a>
+    <a href="#about" class="nav-item" aria-label="About" title="About">👤</a>
+    <a href="#services" class="nav-item" aria-label="Services" title="Services">💼</a>
+    <a href="#portfolio" class="nav-item" aria-label="Portfolio" title="Portfolio">🖼️</a>
+    <a href="#contact" class="nav-item" aria-label="Contact" title="Contact">📞</a>
+  </div>
+
+  <script>
+    const toggle = document.getElementById('menuToggle');
+    const navItems = document.getElementById('navItems');
+    const body = document.body;
+
+    // Toggle menu
+    function toggleMenu() {
+      body.classList.toggle('show');
+    }
+
+    toggle.addEventListener('click', toggleMenu);
+
+    toggle.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleMenu();
+      }
+    });
+
+    // Close on outside click
+    document.addEventListener('click', (e) => {
+      if (!toggle.contains(e.target) && !navItems.contains(e.target)) {
+        body.classList.remove('show');
+      }
+    });
+  </script>
+
+</body>
+</html>
