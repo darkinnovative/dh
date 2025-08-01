@@ -60,7 +60,7 @@ const Hero: React.FC = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
                 >
-                  Dhairya Sharma
+                  <span className="text-executive-600">Product Manager</span>
                 </motion.h1>
 
                 <motion.h2 
@@ -146,7 +146,7 @@ const Hero: React.FC = () => {
                   {[
                     { icon: FaGithub, href: 'https://github.com', label: 'GitHub' },
                     { icon: FaLinkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-                    { icon: FaEnvelope, href: 'mailto:dhairya.sharma@example.com', label: 'Email' },
+                    { icon: FaEnvelope, href: 'mailto:contact@portfolio.dev', label: 'Email' },
                   ].map((social, index) => (
                     <motion.a
                       key={index}

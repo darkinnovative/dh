@@ -166,7 +166,7 @@ const Header: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               whileHover={{ scale: 1.02 }}
             >
-              <span className="text-base sm:text-lg font-bold text-executive-600 font-mono tracking-wider">&lt;Dhairya-Sharma.dev/&gt;</span>
+              <span className="text-base sm:text-lg font-bold text-executive-600 font-mono tracking-wider">&lt;Portfolio.dev/&gt;</span>
             </motion.div>
           </div>
         </div>
@@ -188,7 +188,7 @@ const Header: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             whileHover={{ scale: 1.02 }}
           >
-            <span className="text-sm font-bold text-executive-600 font-mono tracking-wider">&lt;Dhairya-Sharma.dev/&gt;</span>
+            <span className="text-sm font-bold text-executive-600 font-mono tracking-wider">&lt;Portfolio.dev/&gt;</span>
           </motion.div>
           
           {/* Navigation - Center */}

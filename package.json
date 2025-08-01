@@ -1,9 +1,9 @@
 {
-  "name": "client-project",
+  "name": "portfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://darkinnovative.github.io/dhairya-sharma",
+  "homepage": "https://darkinnovative.github.io/portfolio",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

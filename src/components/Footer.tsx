@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
         <div className="text-center">
           {/* Logo */}
           <h3 className="text-xl font-bold text-executive-600 font-mono mb-4">
-            &lt;Dhairya-Sharma.dev/&gt;
+            &lt;Portfolio.dev/&gt;
           </h3>
 
           {/* Social Links */}
@@ -32,7 +32,7 @@ const Footer: React.FC = () => {
               <FaLinkedin />
             </a>
             <a
-              href="mailto:dhairya.sharma@example.com"
+              href="mailto:contact@portfolio.dev"
               className="w-10 h-10 bg-corporate-100 rounded-lg flex items-center justify-center text-corporate-600 hover:bg-executive-600 hover:text-white transition-colors duration-300"
               title="Email"
             >
@@ -43,7 +43,7 @@ const Footer: React.FC = () => {
           {/* Copyright */}
           <p className="text-corporate-600 text-sm">
             <span className="flex items-center justify-center gap-2">
-              Crafted with <FaHeart className="text-accent-500 text-sm" /> © 2025 Dhairya Sharma
+              Crafted with <FaHeart className="text-accent-500 text-sm" /> © 2025 Portfolio
             </span>
           </p>
         </div>
